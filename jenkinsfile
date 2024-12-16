@@ -16,7 +16,7 @@ pipeline {
       }
       stage ('PUSH') {
          steps {
-            sh 'build/push.sh'
+            sh 'push/push.sh'
          }
       }
    }   
