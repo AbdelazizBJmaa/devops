@@ -5,18 +5,18 @@ pipeline {
    stages {
       stage ('TEST') {
          steps {
-             sh 'sudo ./build/mvn.sh mvn test'       
+             sh './build/mvn.sh mvn test'       
          }
       } 
       stage ('BUILD') {
          steps {
-           sh 'sudo ./build/mvn.sh mvn clean package'
-           sh 'sudo ./build/buildimage.sh' 
+           sh './build/mvn.sh mvn clean package'
+           sh './build/buildimage.sh' 
          }
       }
       stage ('PUSH') {
          steps {
-            sh 'sudo ./push/push.sh'
+            sh './push/push.sh'
          }
       }
    }   
